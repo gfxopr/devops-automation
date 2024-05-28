@@ -13,6 +13,7 @@ pipeline {
         stage('Groovy plugins check'){
         steps{
             script{
+            @NonCPS
             def checkForVulnerabilities(String imageName) {
                 def grypeScanner = Jenkins.instance.getExtensionList('io.jenkins.plugins.grypescanner.GrypeScanner')[0]
                 def scanResult = grypeScanner.scan(imageName)
