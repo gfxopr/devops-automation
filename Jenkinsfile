@@ -30,6 +30,7 @@ pipeline {
             checkForVulnerabilities(".")
         }
         }
+        }
         stage('Build docker image'){
             steps{
                 script{
