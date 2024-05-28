@@ -13,7 +13,7 @@ pipeline {
         stage('Build docker image'){
             steps{
                 script{
-                    sh 'systectl start docker'
+                    sh 'systemctl start docker'
                     sh 'docker build -t javatechie/devops-integration .'
                 }
             }
