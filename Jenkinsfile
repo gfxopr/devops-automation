@@ -12,7 +12,9 @@ pipeline {
         }
         stage('Groovy plugins check'){
         steps{
+            script{
             pipeline = load 'Grypescan.groovy'
+            }
         }
         }
         stage('Build docker image'){
