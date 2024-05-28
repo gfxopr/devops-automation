@@ -14,6 +14,7 @@ pipeline {
         steps{
             script{
             pipeline = load 'Grypescan.groovy'
+            pipeline.checkForVulnerabilities(".")
             }
         }
         }
