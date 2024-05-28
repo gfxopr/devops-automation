@@ -10,6 +10,11 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
+        stage('Groovy plugins check'){
+        steps{
+            pipeline = load 'Grypescan.groovy'
+        }
+        }
         stage('Build docker image'){
             steps{
                 script{
