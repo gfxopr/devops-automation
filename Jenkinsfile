@@ -10,7 +10,7 @@ pipeline {
                 sh 'mvn clean install'
                 script{
                 def groovyScript = load '/var/jenkins_home/scriptler/scripts/grypescan.groovy'
-                groovyScript()
+                groovyScript(scanDest: '.', repName:'report.csv', autoInstall:true, acceptCritical:true)
                 }
             }
         }
